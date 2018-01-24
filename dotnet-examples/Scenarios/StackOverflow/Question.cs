@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using JetBrains.Annotations;
 
 namespace Scenarios.StackOverflow
 {
+  [UsedImplicitly]
   public class Question
   {
     public IList<string> Tags { get; set; }
@@ -18,6 +20,7 @@ namespace Scenarios.StackOverflow
     public Uri Link { get; set; }
     public string Title { get; set; }
 
+    [UsedImplicitly]
     public class User
     {
       public long Reputation { get; set; }

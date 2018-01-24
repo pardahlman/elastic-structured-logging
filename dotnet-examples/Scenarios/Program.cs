@@ -11,7 +11,7 @@ namespace Scenarios
 {
   using Scenarios.StackOverflow;
 
-  public class Program
+  public static class Program
   {
     public static int Main(string[] args)
     {
@@ -23,7 +23,7 @@ namespace Scenarios
       return tsc.Task.GetAwaiter().GetResult();
     }
 
-    public static async Task MainAsync(string[] args, CancellationToken ct)
+    private static async Task MainAsync(string[] args, CancellationToken ct)
     {
       Log.Logger = new LoggerConfiguration()
         .MinimumLevel.Verbose()

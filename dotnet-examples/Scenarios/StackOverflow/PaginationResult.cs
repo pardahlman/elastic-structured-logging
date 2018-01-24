@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace Scenarios.StackOverflow
 {
+  [UsedImplicitly]
   public class PaginationResult<TItem>
   {
     public List<TItem> Items { get; set; }
