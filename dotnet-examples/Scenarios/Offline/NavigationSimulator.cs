@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Threading.Tasks;
-using Scenarios.Extensions;
-using Serilog;
-
-namespace Scenarios
+﻿namespace Scenarios.Offline
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Net;
+  using System.Threading.Tasks;
+
+  using Serilog;
+
   public class NavigationSimulator
   {
     private static readonly Random Random = new Random();
     private static readonly ILogger Logger = Log.ForContext<NavigationSimulator>();
 
-    private static List<HttpStatusCode> SuccessStatus =
+    private static readonly List<HttpStatusCode> SuccessStatus =
       new List<HttpStatusCode>
       {
         HttpStatusCode.Accepted,
@@ -20,7 +20,7 @@ namespace Scenarios
         HttpStatusCode.NotModified
       };
 
-    private static List<HttpStatusCode> FailStatus = new List<HttpStatusCode>
+    private static readonly List<HttpStatusCode> FailStatus = new List<HttpStatusCode>
     {
       HttpStatusCode.NotFound,
       HttpStatusCode.InternalServerError,

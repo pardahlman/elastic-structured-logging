@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Scenarios.Data;
-using Scenarios.Extensions;
-using Serilog;
-using Serilog.Context;
-
-namespace Scenarios
+﻿namespace Scenarios.Offline
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Threading;
+  using System.Threading.Tasks;
+
+  using Serilog;
+  using Serilog.Context;
+
   public interface IActivity
   {
     Task RunAsync(CancellationToken ct = default);

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Scenarios.Logging;
+using Scenarios.Offline;
 using Serilog;
-using Serilog.Sinks.Elasticsearch;
 
 namespace Scenarios
 {
+  using Scenarios.StackOverflow;
+
   public class Program
   {
     public static int Main(string[] args)
@@ -27,7 +28,7 @@ namespace Scenarios
       Log.Logger = new LoggerConfiguration()
         .MinimumLevel.Verbose()
         .WriteTo.Console()
-        .WriteTo.Elasticsearch(Settings.ElasticOptions)
+        .WriteTo.Elasticsearch()
         .Enrich.FromLogContext()
         .Enrich.WithProperty("buildNumber", 10456)
         .Enrich.WithProperty("branch", "feature/logging")
@@ -35,13 +36,11 @@ namespace Scenarios
 
       var activities = new List<IActivity>
       {
-        new UserLogin()
+        new GetStackOverflowQuestions()
       };
-      while (true)
-      {
-        var tasks = activities.Select(a => a.RunAsync(ct));
-        await Task.WhenAll(tasks);
-      }
+
+      var tasks = activities.Select(a => a.RunAsync(ct));
+      await Task.WhenAll(tasks);
     }
   }
 }

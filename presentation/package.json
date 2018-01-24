@@ -1,0 +1,15 @@
+{
+  "name": "structured-logging",
+  "version": "0.0.1",
+  "description": "slides",
+  "main": "index.js",
+  "scripts": {
+    "start": "reveal-md slides.md -w --theme white --css overrides.css --title Logging",
+    "export": "reveal-md slides.md --print slides.pdf"
+  },
+  "author": "pardahlman",
+  "license": "MIT",
+  "dependencies": {
+    "reveal-md": "^1.1.0"
+  }
+}

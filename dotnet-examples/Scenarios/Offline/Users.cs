@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Scenarios.Data
+﻿namespace Scenarios.Offline
 {
+  using System;
+  using System.Collections.Generic;
+
   public class Users
   {
     public static readonly User ObiWan = new User

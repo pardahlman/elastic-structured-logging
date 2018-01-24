@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Scenarios.Extensions
+﻿namespace Scenarios.Offline
 {
+  using System;
+
   public static class EnumUtil
   {
     private static readonly Random Random = new Random();
