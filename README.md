@@ -10,7 +10,7 @@ _Psst!_ pressing `s` will open [Speakers notes](https://github.com/hakimel/revea
 
 # Setup Elastic
 
-Make sure you have [Docker isntalled](https://www.docker.com/get-docker), then run
+Make sure you have [Docker installed](https://www.docker.com/get-docker), then run
 
 ```
 > cd ./elastic
